@@ -21,6 +21,7 @@
 /* Begin PBXFileReference section */
 		04FFE91B84B8937E344A4C37 /* Pods-LZFoundation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LZFoundation.release.xcconfig"; path = "Pods/Target Support Files/Pods-LZFoundation/Pods-LZFoundation.release.xcconfig"; sourceTree = "<group>"; };
 		77EF47451FE2AB6100A12498 /* AppInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AppInfo.plist; sourceTree = "<group>"; };
+		77EF47471FE2AE3100A12498 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		77F46D121FE1171800196BAB /* LZFoundation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LZFoundation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77F46D151FE1171800196BAB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		77F46D161FE1171800196BAB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -125,6 +126,7 @@
 		77F46D661FE13E0F00196BAB /* App */ = {
 			isa = PBXGroup;
 			children = (
+				77EF47471FE2AE3100A12498 /* README.md */,
 			);
 			path = App;
 			sourceTree = "<group>";
