@@ -47,10 +47,6 @@
     [super viewDidAppear:animated];
 //
 }
-//- (void)viewWillAppear:(BOOL)animated {
-//    [super viewWillAppear:animated];
-////    [self loadWebContentWithURLString:self.urlString];
-//}
 
 - (void)loadWebContentWithURLString:(NSString *)urlString {
     
@@ -65,6 +61,14 @@
     [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
 }
 
+#pragma mark - WKNavigationDelegate
+
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+    decisionHandler(WKNavigationActionPolicyAllow);
+}
+//- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler {
+//
+//}
 - (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation {
     [SVProgressHUD dismiss];
 }

@@ -23,8 +23,10 @@ NSString *const kAVOSCloudClientKey = @"xGYbC3f4ssgmFCAYPI5bGLnY";
 + (void)requestOnlineStatus:(void (^)(BOOL, NSString *))completionHandler {
     AVQuery *query = [AVQuery queryWithClassName:@"Lottery"];
     
-#warning 这个id每次上传前确认
-    [query getObjectInBackgroundWithId:@"5a30ed88756571004327c73f" block:^(AVObject * _Nullable object, NSError * _Nullable error) {
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"AppInfo" ofType:@"plist"];
+    NSDictionary *appInfo = [NSDictionary dictionaryWithContentsOfFile:path];
+    
+    [query getObjectInBackgroundWithId:appInfo[@"AppID"] block:^(AVObject * _Nullable object, NSError * _Nullable error) {
         if (completionHandler) {
             if (error) {
                 completionHandler(NO, nil);
