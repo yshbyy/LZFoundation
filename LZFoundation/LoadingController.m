@@ -19,8 +19,8 @@
     
     UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     indicatorView.center = self.view.center;
+    [indicatorView startAnimating];
     [self.view addSubview:indicatorView];
-    
     
     self.view.backgroundColor = [UIColor whiteColor];
 }

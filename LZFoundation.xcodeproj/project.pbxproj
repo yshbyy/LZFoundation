@@ -20,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		04FFE91B84B8937E344A4C37 /* Pods-LZFoundation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LZFoundation.release.xcconfig"; path = "Pods/Target Support Files/Pods-LZFoundation/Pods-LZFoundation.release.xcconfig"; sourceTree = "<group>"; };
+		77A2C75B2004FD6400944AAD /* LZFoundation.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LZFoundation.entitlements; sourceTree = "<group>"; };
 		77EF47451FE2AB6100A12498 /* AppInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AppInfo.plist; sourceTree = "<group>"; };
 		77EF47471FE2AE3100A12498 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		77F46D121FE1171800196BAB /* LZFoundation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LZFoundation.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +91,7 @@
 		77F46D141FE1171800196BAB /* LZFoundation */ = {
 			isa = PBXGroup;
 			children = (
+				77A2C75B2004FD6400944AAD /* LZFoundation.entitlements */,
 				77F46D471FE125E900196BAB /* Network */,
 				77F46D431FE11CF300196BAB /* WebViewController */,
 				77F46D151FE1171800196BAB /* AppDelegate.h */,
@@ -166,6 +168,14 @@
 					77F46D111FE1171800196BAB = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -391,6 +401,7 @@
 			baseConfigurationReference = D1DC6B1F16ADE5486B712DD8 /* Pods-LZFoundation.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LZFoundation/LZFoundation.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T52JUQB3HV;
 				INFOPLIST_FILE = LZFoundation/Info.plist;
@@ -407,6 +418,7 @@
 			baseConfigurationReference = 04FFE91B84B8937E344A4C37 /* Pods-LZFoundation.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LZFoundation/LZFoundation.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T52JUQB3HV;
 				INFOPLIST_FILE = LZFoundation/Info.plist;
