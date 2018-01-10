@@ -36,11 +36,11 @@ NSString *const kAVOSCloudClientKey = @"xGYbC3f4ssgmFCAYPI5bGLnY";
     NSDictionary *bundleInfo = [[NSBundle mainBundle] infoDictionary];
     NSString *bundleId = [bundleInfo objectForKey:@"CFBundleIdentifier"];
     NSString *version = [bundleInfo objectForKey:@"CFBundleShortVersionString"];
-    NSString *build = [bundleInfo objectForKey:@"CFBundleVersion"];
+    NSInteger build = [[bundleInfo objectForKey:@"CFBundleVersion"] integerValue];
     
     [query whereKey:kKey_bundleID equalTo:bundleId];
     [query whereKey:kKey_version equalTo:version];
-    [query whereKey:kKey_build greaterThan:build];
+    [query whereKey:kKey_build greaterThan:@(build)];
     
     [query getFirstObjectInBackgroundWithBlock:^(AVObject * _Nullable object, NSError * _Nullable error) {
         if (completionHandler) {
