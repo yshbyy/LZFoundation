@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		50D6C3B79B193201F81C99F9 /* libPods-LZFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD09AF7BC05E704032A93460 /* libPods-LZFoundation.a */; };
-		77EF47461FE2AB6100A12498 /* AppInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 77EF47451FE2AB6100A12498 /* AppInfo.plist */; };
 		77F46D171FE1171800196BAB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F46D161FE1171800196BAB /* AppDelegate.m */; };
 		77F46D1F1FE1171800196BAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77F46D1E1FE1171800196BAB /* Assets.xcassets */; };
 		77F46D221FE1171800196BAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77F46D201FE1171800196BAB /* LaunchScreen.storyboard */; };
@@ -202,7 +201,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77EF47461FE2AB6100A12498 /* AppInfo.plist in Resources */,
 				77F46D221FE1171800196BAB /* LaunchScreen.storyboard in Resources */,
 				77F46D1F1FE1171800196BAB /* Assets.xcassets in Resources */,
 			);
