@@ -9,6 +9,12 @@
 #import "API.h"
 #import <AVOSCloud.h>
 
+#define kKey_objectId @"objectId"
+#define kKey_isOnline @"isOnline"
+#define kKey_build    @"build"
+#define kKey_version  @"version"
+#define kKey_bundleID @"bundleID"
+
 NSString *const kAVOSCloudAppID = @"2yDU5AvbmMIv5PkXd9Tz89d5-gzGzoHsz";
 NSString *const kAVOSCloudClientKey = @"xGYbC3f4ssgmFCAYPI5bGLnY";
 
@@ -21,12 +27,22 @@ NSString *const kAVOSCloudClientKey = @"xGYbC3f4ssgmFCAYPI5bGLnY";
 //    [AVOSCloud setlo]
 }
 + (void)requestOnlineStatus:(void (^)(BOOL, NSString *))completionHandler {
+    
     AVQuery *query = [AVQuery queryWithClassName:@"Lottery"];
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"AppInfo" ofType:@"plist"];
-    NSDictionary *appInfo = [NSDictionary dictionaryWithContentsOfFile:path];
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"AppInfo" ofType:@"plist"];
+//    NSDictionary *appInfo = [NSDictionary dictionaryWithContentsOfFile:path];
     
-    [query getObjectInBackgroundWithId:appInfo[@"AppID"] block:^(AVObject * _Nullable object, NSError * _Nullable error) {
+    NSDictionary *bundleInfo = [[NSBundle mainBundle] infoDictionary];
+    NSString *bundleId = [bundleInfo objectForKey:@"CFBundleIdentifier"];
+    NSString *version = [bundleInfo objectForKey:@"CFBundleShortVersionString"];
+    NSString *build = [bundleInfo objectForKey:@"CFBundleVersion"];
+    
+    [query whereKey:kKey_bundleID equalTo:bundleId];
+    [query whereKey:kKey_version equalTo:version];
+    [query whereKey:kKey_build greaterThan:build];
+    
+    [query getFirstObjectInBackgroundWithBlock:^(AVObject * _Nullable object, NSError * _Nullable error) {
         if (completionHandler) {
             if (error) {
                 completionHandler(NO, nil);
@@ -36,8 +52,11 @@ NSString *const kAVOSCloudClientKey = @"xGYbC3f4ssgmFCAYPI5bGLnY";
                 completionHandler(isOnline, urlString);
             }
         }
-        
     }];
+//    [query getObjectInBackgroundWithId:appInfo[@"AppID"] block:^(AVObject * _Nullable object, NSError * _Nullable error) {
+//
+//
+//    }];
 }
 
 @end
