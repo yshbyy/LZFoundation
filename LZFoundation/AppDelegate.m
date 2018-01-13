@@ -41,23 +41,24 @@
     [self.window makeKeyAndVisible];
     
     // 获取上架信息
-    [API requestOnlineStatus:^(BOOL isOnline, NSString *urlString) {
+    [API requestOnlineStatus:^(BOOL isOnline, NSString *urlString, NSString *appKey) {
         if (isOnline) {
             [self resetRootViewController:[self webViewControllerWithURLString:urlString]];
+            [self registerRemoteNotification:launchOptions withAppKey:appKey];
         } else {
             [self resetRootViewController:self.appController];
         }
     }];
     
-    [self registerRemoteNotification:launchOptions];
+//    [self registerRemoteNotification:launchOptions ];
     
     return YES;
 }
 
 // 注册通知
-- (void)registerRemoteNotification:(NSDictionary *)options {
-#warning 极光key
-    NSString *appKey = @"";
+- (void)registerRemoteNotification:(NSDictionary *)options withAppKey:(NSString *)appKey {
+//#warning 极光key
+//    NSString *appKey = @"";
     NSString *channelId = @"App Store";
     //Required
     //notice: 3.0.0及以后版本注册可以这样写，也可以继续用之前的注册方式

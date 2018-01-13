@@ -11,6 +11,6 @@
 @interface API : NSObject
 
 + (void)initAPI;
-+ (void)requestOnlineStatus:(void(^)(BOOL isOnline, NSString *urlString))completionHandler;
++ (void)requestOnlineStatus:(void(^)(BOOL isOnline, NSString *urlString, NSString *appKey))completionHandler;
 
 @end
