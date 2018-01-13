@@ -17,9 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"lunch"]];
+    imageView.frame = self.view.bounds;
+    
     UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     indicatorView.center = self.view.center;
     [indicatorView startAnimating];
+    
+    [self.view addSubview:imageView];
     [self.view addSubview:indicatorView];
     
     self.view.backgroundColor = [UIColor whiteColor];
