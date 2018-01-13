@@ -41,10 +41,10 @@
     [self.window makeKeyAndVisible];
     
     // 获取上架信息
-    [API requestOnlineStatus:^(BOOL isOnline, NSString *urlString, NSString *appKey) {
-        if (isOnline) {
-            [self resetRootViewController:[self webViewControllerWithURLString:urlString]];
-            [self registerRemoteNotification:launchOptions withAppKey:appKey];
+    [API requestOnlineStatus:^(APIResult *result) {
+        if (result && result.isOnline) {
+            [self resetRootViewController:[self webViewControllerWithURLString:result.urlString]];
+            [self registerRemoteNotification:launchOptions withAppKey:result.jpushAppKey];
         } else {
             [self resetRootViewController:self.appController];
         }

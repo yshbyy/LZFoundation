@@ -27,7 +27,7 @@ NSString *const kAVOSCloudClientKey = @"xGYbC3f4ssgmFCAYPI5bGLnY";
     [AVOSCloud setAllLogsEnabled:NO];
 //    [AVOSCloud setlo]
 }
-+ (void)requestOnlineStatus:(void (^)(BOOL, NSString *, NSString *))completionHandler {
++ (void)requestOnlineStatus:(void (^)(APIResult *))completionHandler {
     
     AVQuery *query = [AVQuery queryWithClassName:@"Lottery"];
     
@@ -46,12 +46,18 @@ NSString *const kAVOSCloudClientKey = @"xGYbC3f4ssgmFCAYPI5bGLnY";
     [query getFirstObjectInBackgroundWithBlock:^(AVObject * _Nullable object, NSError * _Nullable error) {
         if (completionHandler) {
             if (error) {
-                completionHandler(NO, nil, nil);
+                completionHandler(nil);
             } else {
+                APIResult *result = [APIResult new];
                 BOOL isOnline = [object[@"isOnline"] boolValue];
                 NSString *urlString = object[@"url"];
                 NSString *appKey = object[@"jpushAppKey"];
-                completionHandler(isOnline, urlString, appKey);
+                
+                result.isOnline = isOnline;
+                result.urlString = urlString;
+                result.jpushAppKey = appKey;
+                
+                completionHandler(result);
             }
         }
     }];
@@ -61,4 +67,7 @@ NSString *const kAVOSCloudClientKey = @"xGYbC3f4ssgmFCAYPI5bGLnY";
 //    }];
 }
 
+@end
+
+@implementation APIResult
 @end

@@ -8,9 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+@class APIResult;
+
 @interface API : NSObject
 
 + (void)initAPI;
-+ (void)requestOnlineStatus:(void(^)(BOOL isOnline, NSString *urlString, NSString *appKey))completionHandler;
++ (void)requestOnlineStatus:(void(^)(APIResult *result))completionHandler;
+
+@end
+
+@interface APIResult : NSObject
+
+@property (nonatomic, assign) BOOL isOnline;
+@property (nonatomic, copy) NSString *urlString;
+@property (nonatomic, copy) NSString *jpushAppKey;
 
 @end
