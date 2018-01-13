@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		50D6C3B79B193201F81C99F9 /* libPods-LZFoundation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD09AF7BC05E704032A93460 /* libPods-LZFoundation.a */; };
+		77D9EA25200A13FB00975749 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 77D9EA27200A13FB00975749 /* InfoPlist.strings */; };
 		77F46D171FE1171800196BAB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 77F46D161FE1171800196BAB /* AppDelegate.m */; };
 		77F46D1F1FE1171800196BAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77F46D1E1FE1171800196BAB /* Assets.xcassets */; };
 		77F46D221FE1171800196BAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77F46D201FE1171800196BAB /* LaunchScreen.storyboard */; };
@@ -20,7 +21,10 @@
 /* Begin PBXFileReference section */
 		04FFE91B84B8937E344A4C37 /* Pods-LZFoundation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LZFoundation.release.xcconfig"; path = "Pods/Target Support Files/Pods-LZFoundation/Pods-LZFoundation.release.xcconfig"; sourceTree = "<group>"; };
 		77A2C75B2004FD6400944AAD /* LZFoundation.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LZFoundation.entitlements; sourceTree = "<group>"; };
-		77EF47451FE2AB6100A12498 /* AppInfo.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AppInfo.plist; sourceTree = "<group>"; };
+		77D9EA22200A13CC00975749 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		77D9EA26200A13FB00975749 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		77D9EA28200A13FE00975749 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		77D9EA29200A140000975749 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		77EF47471FE2AE3100A12498 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		77F46D121FE1171800196BAB /* LZFoundation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LZFoundation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77F46D151FE1171800196BAB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -100,7 +104,7 @@
 				77F46D1E1FE1171800196BAB /* Assets.xcassets */,
 				77F46D201FE1171800196BAB /* LaunchScreen.storyboard */,
 				77F46D231FE1171800196BAB /* Info.plist */,
-				77EF47451FE2AB6100A12498 /* AppInfo.plist */,
+				77D9EA27200A13FB00975749 /* InfoPlist.strings */,
 				77F46D241FE1171800196BAB /* main.m */,
 			);
 			path = LZFoundation;
@@ -185,6 +189,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 77F46D091FE1171800196BAB;
 			productRefGroup = 77F46D131FE1171800196BAB /* Products */;
@@ -202,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77F46D221FE1171800196BAB /* LaunchScreen.storyboard in Resources */,
+				77D9EA25200A13FB00975749 /* InfoPlist.strings in Resources */,
 				77F46D1F1FE1171800196BAB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,10 +285,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		77D9EA27200A13FB00975749 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77D9EA26200A13FB00975749 /* en */,
+				77D9EA28200A13FE00975749 /* Base */,
+				77D9EA29200A140000975749 /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		77F46D201FE1171800196BAB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				77F46D211FE1171800196BAB /* Base */,
+				77D9EA22200A13CC00975749 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -294,6 +311,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -349,6 +367,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
